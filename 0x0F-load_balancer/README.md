@@ -1,11 +1,11 @@
-<h1><strong>0x0F. Load balancer<\strong><\h1>
+<h1>0x0F. Load balancer<\h1>
 
 ## Load balancer
 Ever wonder how Facebook, Linkedin, Twitter a0nd other web giants are handling such huge amounts of traffic? They don’t have just one server, but tens of thousands of them. In order to achieve this, web traffic needs to be distributed to these servers, and that is the role of a load-balancer.
 
 ### Readme:
-* [Load balancer] (https://intranet.alxswe.com/concepts/46)
-* [Web Stack Debuggin](https://intranet.alxswe.com/concepts/68)
+* [Load balancer](https://intranet.alxswe.com/concepts/46)
+* [Web Stack Debugging](https://intranet.alxswe.com/concepts/68)
 
 ## Background Context
 
