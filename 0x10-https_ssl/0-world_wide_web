@@ -7,10 +7,10 @@ domain_check() {
     subdomains=("www"  "lb-01" "web-01" "web-02")
     if [ -z "$2" ]; then
 	for i in "${subdomains[@]}"; do
-	    dig "$i.$1" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk '{split($0, SUBDOMAIN, "."); print "The subdomain " SUBDOMAIN[1] " is a " $4 " record and points to " $5}'
+	    dig "$i.$1" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk '{split($0, subdomain, "."); print "The subdomain " subdomain[1] " is a " $4 " record and points to " $5}'
 	done
     else
-	dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk '{split($0, SUBDOMAIN, "."); print "The subdomain " SUBDOMAIN[1] " is a " $4 " record and points to " $5}'
+	dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk '{split($0, subdomain, "."); print "The subdomain " subdomain[1] " is a " $4 " record and points to " $5}'
     fi
 }
 
