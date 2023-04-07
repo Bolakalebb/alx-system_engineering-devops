@@ -33,20 +33,21 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend tekbro.tech-http-frontend
-        bind *:80
-        mode http
-        http-request set-header X-Forwarded-Proto http
-        default_backend  tekbro.tech-backend
-
-
 frontend  tekbro.tech-https-frontend
-        bind *:443 ssl crt /etc/ssl/tekbro.tech.pem
-        http-request set-header X-Forwarded-Proto https
+	bind *:80
+        mode http
+        bind *:443 ssl crt /etc/haproxy/certs/tekbro.tech.pem
+        redirect scheme https if !{ ssl_fc }
         default_backend tekbro.tech-backend
 
 
 backend tekbro.tech-backend
+        balance roundrobin
+        server 147333-web-01 54.158.180.235:80 check
+        server 147333-web-02 54.237.0.75:80 check
+
+listen http-in
+        bind :80
         balance roundrobin
         server 147333-web-01 54.158.180.235:80 check
         server 147333-web-02 54.237.0.75:80 check
