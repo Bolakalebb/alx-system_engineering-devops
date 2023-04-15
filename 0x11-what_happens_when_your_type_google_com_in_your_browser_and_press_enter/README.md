@@ -44,7 +44,7 @@ that the request is distributed via a load balancer
 that the web server answers the request by serving a web page
 that the application server generates the web page
 that the application server request data from the database
-Gliffy[https://www.gliffy.com/] is free and what I personally use, but feel free to use what fits you best.</P>
+[Gliffy](https://www.gliffy.com/) is free and what I personally use, but feel free to use what fits you best.</P>
 ----
 
 ### 2. Contribute!
