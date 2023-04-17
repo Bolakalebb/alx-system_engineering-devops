@@ -1,14 +1,4 @@
-#!/usr/bin/evn bash
-# Configure ufw so that it blocks all incoming traffic except 22, 443 and 80
-
-# to install ufw
-sudo apt-get -y install ufw
-# to enable ufw
-sudo ufw
-# to allow enable SSH (port 22) traffic
-sudo ufw allow 22/tcp
-# to allow enable HTTPS SSL (port 443) traffic
-sudo ufw allow 443/tcp
-# to allow enable HTTP (port 80) traffic
-sudo ufw allow 80/tcp
-sudo ufw default deny incoming
+ufw allow 22/tcp
+ufw allow 443/tcp
+ufw allow 80/tcp
+ufw enable
