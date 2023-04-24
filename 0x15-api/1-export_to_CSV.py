@@ -10,7 +10,7 @@ if __name__ == '__main__':
     baseUrl = "https://jsonplaceholder.typicode.com/users"
     url = baseUrl + "/" + employeeId
 
-     response = requests.get(url)
+    response = requests.get(url)
     username = response.json().get('username')
 
     todoUrl = url + "/todos"
