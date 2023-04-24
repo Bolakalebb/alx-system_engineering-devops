@@ -14,15 +14,15 @@ if __name__ == '__main__':
 
     dictionary = {}
     for user in users:
-        user_id = user.get('id')
+        employee_id = user.get('id')
         username = user.get('username')
-        url = 'https://jsonplaceholder.typicode.com/users/{}'.format(user_id)
+        url = 'https://jsonplaceholder.typicode.com/users/{}'.format(employee_id)
         url = url + '/todos/'
         response = requests.get(url)
         tasks = response.json()
-        dictionary[user_id] = []
+        dictionary[employee_id] = []
         for task in tasks:
-            dictionary[user_id].append({
+            dictionary[employee_id].append({
                 "task": task.get('title'),
                 "completed": task.get('completed'),
                 "username": username
