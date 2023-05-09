@@ -8,11 +8,16 @@ import requests
 def number_of_subscribers(subreddit):
 	""" Queries to Reddit API """
 	
+	if subreddit is None or not isinstance(subreddit, str):
+        return 0
+
+	user_agent = {'User-agent': 'myBot/0.0.1'}
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
-    headers = {"User-Agent": "myBot/0.0.1"}
-    response = requests.get(url, headers=headers, allow_redirects=False)
-    if response.status_code == 200:
-        data = response.json()["data"]
-        return data["subscribers"]
-    else:
+    response = get(url, headers=user_agent)
+    results = response.json()
+
+	try:
+        return results.get('data').get('subscribers')
+
+    except Exception:
         return 0
