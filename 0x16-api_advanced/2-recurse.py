@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-A function that queries the Reddit API and prints 
-the titles of the first 10 hot posts listed for a given subreddit.
+A function that queries the Reddit API
 @authour: Bolakale Aduloju
 """
 import requests
@@ -11,7 +10,7 @@ after = None
 def recurse(subreddit, hot_list=[]):
     """returns top ten post titles"""
     global after
-    user_agent = {'User-Agent': 'api_advanced-project'}
+    user_agent = {'User-Agent': 'Mozilla/5.0'}
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     parameters = {'after': after}
     results = requests.get(url, params=parameters, headers=user_agent,
