@@ -12,7 +12,7 @@ def recurse(subreddit, hot_list=[]):
     global after
     user_agent = {'User-Agent': 'Mozilla/5.0'}
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    param = {'after': after}
+    params = {'after': after}
     results = requests.get(url, params=parameters, headers=user_agent,
                            allow_redirects=False)
 
