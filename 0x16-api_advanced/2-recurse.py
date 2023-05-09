@@ -1,18 +1,21 @@
 #!/usr/bin/python3
 """
-A recursive function that queries the Reddit API 
-and returns a list containing the titles of all hot articles for a given subreddit.
+A function that queries the Reddit API and prints 
+the titles of the first 10 hot posts listed for a given subreddit.
+@authour: Bolakale Aduloju
 """
 import requests
 after = None
 
 
 def recurse(subreddit, hot_list=[]):
-    """returns a list containing the titles of all hot articles for a given subreddit"""
+    """returns top ten post titles"""
     global after
-    user_agent = {'User-Agent': 'Mozilla/5.0'}
+    user_agent = {'User-Agent': 
+                  'Mozilla/5.0'
+                 }
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    params = {'after': after}
+    parameters = {'after': after}
     results = requests.get(url, params=parameters, headers=user_agent,
                            allow_redirects=False)
 
