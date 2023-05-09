@@ -10,10 +10,8 @@ from requests import get
 
 
 def top_ten(subreddit):
-    """
-    Queries to Reddit API
-    """
-
+    """Queries to Reddit API"""
+    
     if subreddit is None or not isinstance(subreddit, str):
         print("None")
 
