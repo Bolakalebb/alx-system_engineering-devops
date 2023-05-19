@@ -1,7 +1,6 @@
 ## Web Stack Outage Postmortem: Database Connection Fiasco
 
-## 🌟 Catchy Introduction 🌟
-Welcome, fellow tech enthusiasts, to the tale of the infamous Database Connection Fiasco! Get ready for a rollercoaster ride of thrilling detective work, unexpected twists, and a resolution that will leave you in awe. Buckle up and join us on this postmortem adventure!
+Welcome, fellow tech enthusiasts, to the tale of the infamous Database Connection Fiasco! Get ready for a rollercoaster ride of thrilling detective work, unexpected twists, and a resolution that will leave you in awe. Buckle up and join me on this postmortem adventure!
 
 ## Issue Summary:
 
